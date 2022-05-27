@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import "./Purchase.css";
-import Swal from "sweetalert2";
+import Swal from 'sweetalert';
 import {  useNavigate, useParams } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase/firebase.init';
@@ -12,7 +12,7 @@ const Purchase = () => {
   const {id}=useParams();
   const [service,setService]=useState({});
   const navigate = useNavigate();
-  const { user } = useAuthState(auth);
+  const  [user] = useAuthState(auth);
 
 useEffect(() => {
 const url=`http://localhost:5000/service/${id}`;
@@ -159,7 +159,7 @@ const { register, handleSubmit, reset } = useForm();
                   </Row>
                   <input
                     value="Order Now"
-                    className="btn btn-primary"
+                    style={{width: '100%', backgroundColor:'pink',height: '40px',borderRadius:'5px',fontSize:'20px'}}
                     type="submit"
                   />
                 </form>
