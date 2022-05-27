@@ -3,11 +3,11 @@ import { Container, Row } from 'react-bootstrap';
 import Product from '../Product/Product';
 
 const Products = () => {
-    const [service, setService] = useState([]);
+    const [services, setServices] = useState([]);
     useEffect(() => {
-      fetch("http://localhost:5000/service")
+      fetch("http://localhost:5000/services")
         .then((res) => res.json())
-        .then((data) => setService(data));
+        .then((data) => setServices(data));
     }, []);
     return (
       <div style={{ marginTop: 40 }}>
@@ -15,9 +15,9 @@ const Products = () => {
         <Container className="mb-5" >
         
             <Row>
-             {service.map((p) => (
+             {services.map((service) => (
             <Product 
-            key={p._id} service={p}></Product>
+            key={service._id} service={service}></Product>
           ))}
             </Row>
           </Container> 
