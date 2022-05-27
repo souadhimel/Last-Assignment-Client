@@ -1,0 +1,10 @@
+.single-item {
+    margin-top: 30px;
+    padding: 30px;
+  }
+  
+  .row-container {
+    display: flex;
+    background-color: rgb(190, 175, 175);
+    margin: 30px;
+  }

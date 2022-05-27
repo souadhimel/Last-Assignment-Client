@@ -1,0 +1,28 @@
+.add-service form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .form-control{
+     height:50px;
+     border: 2px solid red;
+     border-radius: 5px;
+  }
+  .add-service form input,
+  textarea {
+    width: 40%;
+    margin-bottom: 10px;
+  }
+  .text{
+    height:50px;
+    border: 2px solid red;
+    border-radius: 5px;
+  }
+  .add_button{
+    background-color:rgb(106, 175, 235);
+    border-radius: 20px;
+    height: 40px;
+    font-size: 20px;
+    color: white;
+  }

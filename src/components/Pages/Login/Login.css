@@ -1,0 +1,77 @@
+.form_container{
+    width: 600px;
+    height: 600px;
+    border: 1px solid #95A0A7;
+    border-radius: 8px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+
+}
+.form_title{
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 42px;
+/* identical to box height */
+    text-align: center;
+    letter-spacing: 0.0025em;
+    color: #2A414F;
+}
+.input_group{
+    margin-bottom: 20px;
+}
+.input_group label {
+    display: flex;
+}
+.input_group input {
+    width: 415px;
+    height: 55px;
+    border: 1px solid #95A0A7;
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 24px;
+}
+.form_submit{
+    background: #FF99004D;
+    width: 415px;
+    height: 55px;
+    font-size: 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+.form_submit:hover{
+  background-color: rgb(98, 98, 235);  
+}
+.form_submit_google{
+    width: 415px;
+    height: 55px;
+    font-size: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.form_submit_google:hover{
+    background-color: rgb(174, 83, 83);
+}
+.form_link{
+    color: #dca553;
+    text-decoration: none;
+    font-size:  15px;
+
+}
+.form_text{
+    text-align: center;
+}
+.divider{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.divider_line{
+    width: 150px;
+    height: 2px;
+    margin: 0 10px;
+    background-color: rgba(149, 160,167,1);
+}

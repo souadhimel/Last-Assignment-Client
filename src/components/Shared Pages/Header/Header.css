@@ -1,0 +1,11 @@
+.bg-myColor{
+    background-color:#01539D;
+}
+.signOut_click{
+    background-color: rgb(198, 27, 27);
+    width: 100px;
+    height: 30px;
+    border-radius: 15px 15px;
+    color: white;
+    font-size: 15px;
+}

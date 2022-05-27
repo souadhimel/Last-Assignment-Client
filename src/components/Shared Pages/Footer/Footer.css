@@ -1,0 +1,29 @@
+.footer {
+    background: greenyellow;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .footer .share {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+   .btn{
+      font-size:50px;
+      color:rgb(160, 71, 130);
+      padding: 10px;
+  }
+  
+  .footer .credit {
+    padding: 2.5rem 1rem;
+    color: black;
+    font-weight: bold;
+    font-size: 2rem;
+  }
+  
+  .footer .credit span {
+    color: red;
+  }
+ 
