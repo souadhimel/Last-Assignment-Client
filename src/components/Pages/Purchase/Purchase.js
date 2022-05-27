@@ -10,7 +10,7 @@ const Purchase = () => {
 
 
 useEffect(() => {
-const url=`http://localhost:5000/services/${id}`;
+const url=`http://localhost:5000/service/${id}`;
 fetch(url)
 .then((res) => res.json())
 .then((data) =>setService(data))
