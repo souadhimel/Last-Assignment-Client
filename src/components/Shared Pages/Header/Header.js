@@ -22,7 +22,6 @@ const Header = () => {
             <CustomLink  to="/">Home</CustomLink>
             <CustomLink  to="/blogs">Blogs</CustomLink>    
             <CustomLink  to="/portfolio">Portfolio</CustomLink>  
-            <CustomLink  to="/services">Tools</CustomLink>
 
             {
               user && <CustomLink  to="/dashboard">Dashboard</CustomLink>

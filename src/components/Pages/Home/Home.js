@@ -2,7 +2,7 @@ import React from 'react';
 import Banner from '../Banner/Banner';
 import Brands from '../Brands/Brands';
 import Gallery from '../Gallery/Gallery';
-import Products from '../Products/Products';
+import HomeShow from '../HomeShow/HomeShow';
 import DisplayReview from '../Review/DisplayReview';
 import Summary from '../Summary/Summary';
 
@@ -10,7 +10,7 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <Products></Products>
+            <HomeShow></HomeShow> 
             <Gallery></Gallery>
             <Summary></Summary>
             <Brands></Brands>

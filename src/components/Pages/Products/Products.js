@@ -11,7 +11,7 @@ const Products = () => {
     }, []);
     return (
       <div style={{ marginTop: 40 }}>
-        <h2 className="text-center heading feature">Tools</h2>
+        <h2 className="text-center heading feature">More Tools</h2>
         <Container className="mb-5" >
         
             <Row>
