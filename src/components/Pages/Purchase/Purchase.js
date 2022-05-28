@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import "./Purchase.css";
-import Swal from 'sweetalert';
 import {  useNavigate, useParams } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase/firebase.init';
 import { useForm } from 'react-hook-form';
 import { Col, Container, Row, Spinner } from 'react-bootstrap';
+import Swal from 'sweetalert2';
+import { Rotate } from 'react-reveal';
 
 
 const Purchase = () => {
@@ -24,28 +25,27 @@ fetch(url)
 const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
     data.email=user?.email;
-    Swal.fire({
-      icon: "warning",
-      title: "Do you want to confirm your order?",
-      showCancelButton: true,
-      confirmButtonText: "Yes",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        fetch("http://localhost:5000/myOrders", {
-          method: "POST",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify({ ...data, ...service }),
+    fetch("http://localhost:5000/myOrders", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        setService(result);
+        // console.log(result);
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Your order has been successfully submitted!',
+          showConfirmButton: false,
+          timer: 1500
         })
-          .then((res) => res.json())
-          .then((data) => {
-            if (data.insertedId) {
-              reset();
-              Swal.fire("Confirmed!", "", "success");
-              navigate("/myOrders");
-            }
-          });
-      }
-    });
+        reset()
+        navigate('/myOrders')
+      });
+  console.log(data);
+  
   };
 
   return (
@@ -64,12 +64,10 @@ const { register, handleSubmit, reset } = useForm();
               <img width="80%" src={service.img} alt="" />
             </Col>
             <Col className="my-4" sm={12} md={6}>
-              <h2 className="text-center feature">Please confirm order</h2>
+            <Rotate bottom>  <h2 className="text-center feature">Please confirm your order</h2></Rotate>
               <div className="mt-5">
-                <h4>{service.description}</h4>
-                <h3 className="mt-3">Price: {service.price} TK</h3>
-                <h3 className="mt-3">Available Quantity: {service.avQuantity} </h3>
-                <h3 className="mt-3">Minimum Quantity: {service.minQuantity}</h3>
+                <h4>{service?.description}</h4>
+                <h3 className="mt-3">Price: {service?.price} TK</h3>
                 <form onSubmit={handleSubmit(onSubmit)}>
                   <Row className="mt-3">
                     <Col sm={12} md={6}>

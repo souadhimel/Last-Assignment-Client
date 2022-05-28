@@ -1,10 +1,13 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
+import auth from '../../Firebase/firebase.init';
 
 const AddReviews = () => {
     const { register, handleSubmit,reset } = useForm();
+    const  [user] = useAuthState(auth);
   const onSubmit = (data) => {
     console.log(data);
     const url=`http://localhost:5000/rating`;
@@ -32,6 +35,8 @@ const AddReviews = () => {
             className="form-control"
             {...register("name", { required: true})}
             placeholder=" Name"
+            defaultValue={user?.displayName}
+
           />
            <input
             className="form-control"

@@ -32,7 +32,7 @@ const Header = () => {
               user ? <>
               <CustomLink  to="/addProducts">Add Products</CustomLink>
               <CustomLink  to="/myOrders">My Orders</CustomLink>
-              <CustomLink  to="/manageInventories">Manage Items</CustomLink>
+              <CustomLink  to="/manageProducts">Manage Products</CustomLink>
               <button className="signOut_click" onClick={handleSignOut}>Sign out</button>
               <span style={{color:'white', paddingLeft: '10px', fontSize:'20px'}}>{user?.displayName}</span>
               
