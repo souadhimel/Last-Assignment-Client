@@ -31,29 +31,45 @@ function App() {
 <Route path="/" element={<Home></Home>}></Route>
 <Route path="/home" element={<Home></Home>}></Route>
 <Route path="/blogs" element={<Blogs></Blogs>}></Route>
-<Route path="/addProducts" element={<AddProducts></AddProducts>}></Route>
-<Route path="/addReviews" element={<AddReviews></AddReviews>}></Route>
-<Route path="/profile" element={<Profile></Profile>}></Route>
 <Route path="/summary" element={<Summary></Summary>}></Route>
 <Route path="/purchase" element={<Purchase></Purchase>}></Route>
-<Route path="/myOrders" element={<MyOrders></MyOrders>}></Route>
-<Route path="/manageProducts" element={<ManageProducts></ManageProducts>}></Route>
-<Route path="/manageOrders" element={<ManageAllOrders></ManageAllOrders>}></Route>
 <Route path="/service/:id" element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
-<Route path="/dashboard" element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}></Route>
 <Route path="/login" element={<Login></Login>}></Route>
 <Route path="/register" element={<Register></Register>}></Route>
 <Route path="/services" element={<Products></Products>}></Route>
 <Route path="/portfolio" element={<Portfolio></Portfolio>}></Route>
+
+
+<Route path="/addProducts" element={<AddProducts></AddProducts>}></Route>
+<Route path="/addReviews" element={<AddReviews></AddReviews>}></Route>
+<Route path="/profile" element={<Profile></Profile>}></Route>
+<Route path="/myOrders" element={<MyOrders></MyOrders>}></Route>
+<Route path="/manageProducts" element={<ManageProducts></ManageProducts>}></Route>
+<Route path="/manageOrders" element={<ManageAllOrders></ManageAllOrders>}></Route>
+
+<Route path="/dashboard" element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
+<Route index element={<Profile></Profile>}></Route>
+</Route>
+
 <Route path="*" element={<NotFound></NotFound>}></Route>
-
-
   </Routes>
    <Footer></Footer>
   </div>
-   
-
   );
 }
-
 export default App;
+{/* <Route path="dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} >
+<Route index element={<MyAppointments></MyAppointments>}></Route>
+<Route path="review" element={<MyReview></MyReview>}></Route>
+<Route path="history" element={<MyHistory></MyHistory>}></Route>
+</Route> */}
+
+
+{/* <Route path="/addProducts" element={<AddProducts></AddProducts>}></Route>
+<Route path="/addReviews" element={<AddReviews></AddReviews>}></Route>
+<Route path="/profile" element={<Profile></Profile>}></Route>
+<Route path="/myOrders" element={<MyOrders></MyOrders>}></Route>
+<Route path="/manageProducts" element={<ManageProducts></ManageProducts>}></Route>
+<Route path="/manageOrders" element={<ManageAllOrders></ManageAllOrders>}></Route>
+
+<Route path="/dashboard" element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}></Route> */}

@@ -1,0 +1,73 @@
+:root {
+    --offcanvas-width: 270px;
+    --toNavbarHeight: 45px;
+  }
+  
+  .my-button {
+    background: linear-gradient(335.64deg, #fd609f -19.22%, #fa0a66 118.87%);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+  }
+  
+  .my-button:hover {
+    background: linear-gradient(45deg, #ff55c1, #f8072f);
+    color: white;
+  }
+  
+  .my-dashboard li {
+    list-style: none;
+    text-align: start;
+    margin-bottom: 10px;
+  }
+  .my-dashboard a {
+    text-decoration: none;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 10px;
+  }
+  .my-dashboard a:focus {
+    color: rgb(25, 1, 238);
+  }
+  .my-dashboard a:hover {
+    background-color: white;
+    color: black;
+  }
+  
+  .sidebar-nav {
+    width: var(--offcanvas-width);
+  }
+  
+  .toggle_btn {
+    display: none;
+  }
+  .text {
+    display: block;
+  }
+  
+  @media (min-width: 992px) {
+    body {
+      overflow: auto !important;
+    }
+    .main {
+      margin-left: var(--offcanvas-width);
+    }
+    .sidebar-nav {
+      transform: none;
+      visibility: visible !important;
+      top: var(--toNavbarHeight);
+      height: calc(100%-var(--toNavbarHeight));
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .main {
+      margin-left: 0;
+    }
+    .toggle_btn {
+      display: block;
+    }
+    .text {
+      display: none;
+    }
+  }
