@@ -40,6 +40,7 @@ const AddReviews = () => {
           />
            <input
             className="form-control"
+            style={{text: 'center'}}
             type="number"
             {...register("rating")}
             placeholder="Rating"

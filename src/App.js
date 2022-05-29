@@ -21,6 +21,8 @@ import Profile from './components/Pages/Profile/Profile';
 import Dashboard from './components/Pages/Dashboard/Dashboard';
 import ManageProducts from './components/Pages/Manage Products/ManageProducts';
 import ManageAllOrders from './components/Pages/Manage All Orders/ManageAllOrders';
+import Payment from './components/Pages/Payment/Payment';
+import MakeAdmin from './components/Pages/MakeAdmin/MakeAdmin';
 
 
 function App() {
@@ -40,17 +42,21 @@ function App() {
 <Route path="/portfolio" element={<Portfolio></Portfolio>}></Route>
 
 
+
+
 <Route path="/addProducts" element={<AddProducts></AddProducts>}></Route>
-<Route path="/addReviews" element={<AddReviews></AddReviews>}></Route>
 <Route path="/profile" element={<Profile></Profile>}></Route>
-<Route path="/myOrders" element={<MyOrders></MyOrders>}></Route>
+<Route path="/payment" element={<Payment></Payment>}></Route>
 <Route path="/manageProducts" element={<ManageProducts></ManageProducts>}></Route>
 <Route path="/manageOrders" element={<ManageAllOrders></ManageAllOrders>}></Route>
 
+
 <Route path="/dashboard" element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
 <Route index element={<Profile></Profile>}></Route>
+<Route path="myOrders" element={<MyOrders></MyOrders>}></Route>
+<Route path="addReviews" element={<AddReviews></AddReviews>}></Route>
+<Route path="payment" element={<Payment></Payment>}></Route>
 </Route>
-
 <Route path="*" element={<NotFound></NotFound>}></Route>
   </Routes>
    <Footer></Footer>
@@ -58,18 +64,3 @@ function App() {
   );
 }
 export default App;
-{/* <Route path="dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} >
-<Route index element={<MyAppointments></MyAppointments>}></Route>
-<Route path="review" element={<MyReview></MyReview>}></Route>
-<Route path="history" element={<MyHistory></MyHistory>}></Route>
-</Route> */}
-
-
-{/* <Route path="/addProducts" element={<AddProducts></AddProducts>}></Route>
-<Route path="/addReviews" element={<AddReviews></AddReviews>}></Route>
-<Route path="/profile" element={<Profile></Profile>}></Route>
-<Route path="/myOrders" element={<MyOrders></MyOrders>}></Route>
-<Route path="/manageProducts" element={<ManageProducts></ManageProducts>}></Route>
-<Route path="/manageOrders" element={<ManageAllOrders></ManageAllOrders>}></Route>
-
-<Route path="/dashboard" element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}></Route> */}

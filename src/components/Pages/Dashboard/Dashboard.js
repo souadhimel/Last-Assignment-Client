@@ -7,20 +7,20 @@ import "./Dashboard.css"
 
 const Dashboard = () => {
 
-    const { logOut, admin, user } = useAuthState(auth);
+    const { signOut, admin, user } = useAuthState(auth);
     const navigation = useNavigate();
     const location = "/home";
     return (
         <div>
-            {/* <div style={{backgroundColor: 'pink'}}><h1 style={{fontSize:'40px', textAlign:'center',marginTop: '10px'}}>Dashboard</h1></div> */}
+            <div style={{backgroundColor: 'pink'}}><h1 style={{fontSize:'40px', textAlign:'center',marginTop: '10px'}}>Dashboard</h1></div>
             <>
       <Navbar
         className="py-0 navbar "
         fixed="top"
-        bg="dark"
+        bg="light"
         collapseOnSelect
         expand="lg"
-        variant="dark"
+        variant="light"
       >
         <>
           <Navbar.Brand>
@@ -108,12 +108,12 @@ const Dashboard = () => {
                 </div>
               )}
             </ul>
-            <button
-              onClick={() => logOut(navigation, location)}
-              className="btn my-button"
+          <div>  <button
+              onClick={() => signOut(navigation, location)}
+              className=" my-button"
             >
               <i className="fas fa-sign-out-alt"></i> Sign out
-            </button>
+            </button></div>
           </Nav>
         </div>
       </div>
@@ -121,9 +121,6 @@ const Dashboard = () => {
         <Outlet></Outlet>
       </div>
     </>
-
-
-
         </div>
     );
 };

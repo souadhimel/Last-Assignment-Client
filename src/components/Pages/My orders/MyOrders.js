@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 // import {Table } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 // import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import auth from '../../Firebase/firebase.init';
@@ -15,10 +15,10 @@ const MyOrders = () => {
     const [services,setServices]=useState([])
     
 
-//  const navigate = useNavigate()
-// const updateStock=(id)=>{
-//   navigate(`/service/${id}`)
-// }
+ const navigate = useNavigate()
+const updateStock=()=>{
+  navigate('/payment')
+}
     
 
 useEffect(() => {
@@ -89,7 +89,7 @@ useEffect(() => {
              <td>
             <div className="d-flex">  
              <button 
-            //  onClick={() =>updateStock(service?._id)}
+             onClick={() =>updateStock(service?._id)}
               style={{margin:"15px",padding:"12px", backgroundColor:"green",borderRadius:"5px", color:"white", width:"50%"}}>Payment</button>
                <button
                  onClick={() => orderCancel(service?._id)}
