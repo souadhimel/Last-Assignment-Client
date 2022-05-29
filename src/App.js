@@ -24,6 +24,7 @@ import ManageAllOrders from './components/Pages/Manage All Orders/ManageAllOrder
 import Payment from './components/Pages/Payment/Payment';
 import MakeAdmin from './components/Pages/MakeAdmin/MakeAdmin';
 import AllUsers from './components/Pages/All Users/AllUsers';
+import Update from './components/Pages/Update/Update';
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
 <Route path="/register" element={<Register></Register>}></Route>
 <Route path="/services" element={<Products></Products>}></Route>
 <Route path="/portfolio" element={<Portfolio></Portfolio>}></Route>
+<Route path="/update" element={<Update></Update>}></Route>
 
 
 
