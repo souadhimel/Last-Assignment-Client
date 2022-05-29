@@ -42,7 +42,7 @@ const ManageProducts = () => {
 
     return (
         <div>
-        <h2 className="text-center mb-3 feature">Manage products</h2>
+        <h2 className="text-center mb-3 feature ">Manage products</h2>
   
         <Row xs={1} md={3} className="g-4">
           {services.map((service) => (

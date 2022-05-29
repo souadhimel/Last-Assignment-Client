@@ -68,6 +68,8 @@ const { register, handleSubmit, reset } = useForm();
               <div className="mt-5">
                 <h4>{service?.description}</h4>
                 <h3 className="mt-3">Price: {service?.price} TK</h3>
+                <h3>Available Quantity:{service?.avQuantity}</h3>
+                <h3>Minimum Quantity:{service?.minQuantity}</h3>
                 <form onSubmit={handleSubmit(onSubmit)}>
                   <Row className="mt-3">
                     <Col sm={12} md={6}>

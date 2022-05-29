@@ -95,13 +95,17 @@ const Dashboard = () => {
         <div className="offcanvas-body ">
           <Nav className="justify-content-start flex-grow-1 pe-3 my-dashboard">
             <ul className="p-0">
-              <li>
+            
+              {!isAdmin &&
+                <div>
+                      <li>
                 <i className="fas fa-home"></i>{" "}
                 <Link to="/home"> Home</Link>
               </li>
-              {!isAdmin &&
-                <div>
-
+                  <li>
+                    <i className="fas fa-align-justify"></i>{" "}
+                    <Link to="/dashboard/profile">My Profile</Link>
+                  </li>
                   <li>
                     <i className="fas fa-align-justify"></i>{" "}
                     <Link to="/dashboard/myOrders">MyOrders</Link>
@@ -118,6 +122,15 @@ const Dashboard = () => {
               }
               { isAdmin && (
                 <div>
+                    <h2>Admin Dashboard</h2>
+                    <li>
+                <i className="fas fa-home"></i>{" "}
+                <Link to="/home"> Home</Link>
+              </li>
+              <li>
+                    <i className="fas fa-align-justify"></i>{" "}
+                    <Link to="/dashboard/profile">My Profile</Link>
+                  </li>
                   <li>
                     <i className="fas fa-align-justify"></i>{" "}
                     <Link to="/dashboard/manageOrders">ManageAllOrders</Link>

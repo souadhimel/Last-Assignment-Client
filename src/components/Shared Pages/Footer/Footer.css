@@ -1,5 +1,5 @@
 .footer {
-    background: greenyellow;
+    background: rgb(20, 90, 230);
     text-align: center;
     margin-top: 20px;
   }
@@ -12,13 +12,13 @@
   }
    .btn{
       font-size:50px;
-      color:rgb(160, 71, 130);
+      color:white;
       padding: 10px;
   }
   
   .footer .credit {
     padding: 2.5rem 1rem;
-    color: black;
+    color: white;
     font-weight: bold;
     font-size: 2rem;
   }
