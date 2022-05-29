@@ -8,7 +8,7 @@ import {FaTools} from "react-icons/fa"
 
 const Summary = () => {
     return (
-        <section >
+        <section className="mt-5" >
            <h2 className="text-center feature" style={{fontSize:'50px'}}>Summary</h2> 
 
            <div className=" subscriber mt-5" >

@@ -22,7 +22,7 @@ const DisplayReview = () => {
           <Spinner animation="border" />
         ) : (
           <div className="container ">
-            <Row xs={1} md={4} className="g-4 mt-5">
+            <Row xs={1} md={3} className="g-4 mt-5">
               {reviews.map((review) => (
                 <SingleReview key={review._id} review={review}></SingleReview>
               ))}

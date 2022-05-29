@@ -21,13 +21,12 @@ const SingleReview = (props) => {
             <p className="text-primary text-center fw-bold">
               Rating : {rating}/5
             </p>
-            <Rating
-              className="text-warning"
+           <div style={{textAlign: 'center', justifyContent: 'center',text:'center'}}> <Rating
               emptySymbol="far fa-star"
               fullSymbol="fas fa-star"
               initialRating={rating}
               readonly
-            />
+            /></div>
           </Card.Body>
         </Card></Fade>
       </Col>
