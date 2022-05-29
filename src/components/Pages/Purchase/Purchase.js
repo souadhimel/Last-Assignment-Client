@@ -42,7 +42,7 @@ const { register, handleSubmit, reset } = useForm();
           timer: 1500
         })
         reset()
-        navigate('/myOrders')
+        navigate('/home')
       });
   console.log(data);
   
