@@ -1,11 +1,18 @@
 
+import { signOut } from 'firebase/auth';
 import React from 'react';
 import { Button, Card, Container } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import auth from '../../Firebase/firebase.init';
 
 const Profile = () => {
-    const { displayName, email,signOut } = useAuthState(auth);
+    const [user] = useAuthState(auth);
+    const navigation= useNavigate()
+    const logOut = () => {
+        signOut(auth);   
+      navigation("/home")  
+    };
   return (
     <Container style={{ maxWidth: "30rem", marginBottom: "25px" }}>
       <Card className="border-0 shadow">
@@ -21,12 +28,16 @@ const Profile = () => {
               width="150"
             />
             <div className="mt-3">
-              <h4>{displayName}</h4>
-              <p className="text-secondary mb-1">{email}</p>
+              <h4>{user?.displayName}</h4>
+              <p className="text-secondary mb-1">{user?.email}</p>
             </div>
-            <Button onClick={signOut} className="px-4 logout-btn btn-main">
-              Sign Out
-            </Button>
+            <div>  <button
+              onClick={ logOut}
+            //   className=" my-button"
+            style={{padding:'15px',width:'100px' ,backgroundColor:'pink',borderRadius:'15px'}}
+            >
+               Sign out
+            </button></div>
           </div>
         </Card.Body>
       </Card>

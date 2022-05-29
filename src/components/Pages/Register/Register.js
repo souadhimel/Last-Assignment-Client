@@ -37,7 +37,7 @@ const Register = () => {
 
     if (user || gUser) {
         console.log(user || gUser);
-        // navigate('/home');
+        navigate('/home');
     }
 
     const onSubmit = async data => {

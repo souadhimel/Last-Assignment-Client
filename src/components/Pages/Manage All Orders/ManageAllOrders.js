@@ -16,7 +16,7 @@ const updateStock=()=>{
     
 
 useEffect(() => {
-        fetch(`http://localhost:5000/myOrders/${user?.email}`)
+        fetch(`http://localhost:5000/order/${user?.email}`)
         .then(res=>res.json())
         .then(data=>setServices(data))
     },[user?.email])
@@ -24,7 +24,7 @@ useEffect(() => {
     const orderCancel=id=>{
         const proceed=window.confirm('Are you sure you want to delete?')
        if (proceed) {
-         const url=`http://localhost:5000/myOrders/${id}`;
+         const url=`http://localhost:5000/order/${id}`;
         fetch(url,{
             method: 'DELETE'
         }) 

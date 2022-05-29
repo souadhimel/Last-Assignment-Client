@@ -23,6 +23,7 @@ import ManageProducts from './components/Pages/Manage Products/ManageProducts';
 import ManageAllOrders from './components/Pages/Manage All Orders/ManageAllOrders';
 import Payment from './components/Pages/Payment/Payment';
 import MakeAdmin from './components/Pages/MakeAdmin/MakeAdmin';
+import AllUsers from './components/Pages/All Users/AllUsers';
 
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
 <Route path="/payment" element={<Payment></Payment>}></Route>
 <Route path="/manageProducts" element={<ManageProducts></ManageProducts>}></Route>
 <Route path="/manageOrders" element={<ManageAllOrders></ManageAllOrders>}></Route>
+<Route path="/users" element={<AllUsers></AllUsers>}></Route>
 
 
 <Route path="/dashboard" element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>

@@ -1,15 +1,44 @@
-import React from 'react';
+import { signOut } from 'firebase/auth';
+import React, { useEffect, useState } from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, Outlet, useNavigate } from 'react-router-dom';
 import auth from '../../Firebase/firebase.init';
+import Loading from '../../Shared Pages/Loading/Loading';
 import "./Dashboard.css"
 
 const Dashboard = () => {
 
-    const { signOut, admin, user } = useAuthState(auth);
+    const [user,isLoading]= useAuthState(auth);
+    const [isAdmin, setIsAdmin] = useState(false);
+    useEffect(() => {
+
+        fetch(`http://localhost:5000/user/${user?.email}`)
+        .then(res=>res.json())
+        .then((data) => {
+            console.log(data);
+            if (data.role==='admin') {
+                setIsAdmin(true);         
+            }
+            else{
+                setIsAdmin(false);
+            }
+
+        })
+    },[user?.email]);
+    console.log(isAdmin);
+
     const navigation = useNavigate();
-    const location = "/home";
+    const logOut = () => {
+        signOut(auth);   
+      navigation("/home")  
+    };
+
+    if (isLoading) {
+        return<Loading></Loading>
+    }
+
+
     return (
         <div>
             <div style={{backgroundColor: 'pink'}}><h1 style={{fontSize:'40px', textAlign:'center',marginTop: '10px'}}>Dashboard</h1></div>
@@ -70,7 +99,7 @@ const Dashboard = () => {
                 <i className="fas fa-home"></i>{" "}
                 <Link to="/home"> Home</Link>
               </li>
-              {!admin &&
+              {!isAdmin &&
                 <div>
 
                   <li>
@@ -87,7 +116,7 @@ const Dashboard = () => {
                   </li>
                 </div>
               }
-              {admin && (
+              { isAdmin && (
                 <div>
                   <li>
                     <i className="fas fa-align-justify"></i>{" "}
@@ -107,13 +136,15 @@ const Dashboard = () => {
                   </li>
                 </div>
               )}
-            </ul>
-          <div>  <button
-              onClick={() => signOut(navigation, location)}
-              className=" my-button"
+               <div>  <button
+              onClick={ logOut}
+              style={{padding:'15px',width:'100px' ,backgroundColor:'pink',borderRadius:'15px'}}
             >
-              <i className="fas fa-sign-out-alt"></i> Sign out
+               Sign out
             </button></div>
+            </ul>
+          
+         
           </Nav>
         </div>
       </div>
