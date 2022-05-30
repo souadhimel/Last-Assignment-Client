@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import { Zoom } from 'react-reveal';
+import { useNavigate } from 'react-router-dom';
 import Swal from "sweetalert2";
 
 const ManageAllOrders = () => {
     const [orders, setOrders] = useState([]);
+    const navigate = useNavigate()
+    const update=()=>{
+      navigate('/update')
+    }
     useEffect(() => {
       fetch("https://tranquil-dusk-37882.herokuapp.com/order")
         .then((res) => res.json())
@@ -71,9 +76,7 @@ const ManageAllOrders = () => {
              <td>
             <div className="d-flex">  
              <button 
-            //  onClick={() =>updateStock(order?._id)}
-
-
+           onClick={() =>update(order?._id)}
               style={{margin:"15px",padding:"12px", backgroundColor:"green",borderRadius:"5px", color:"white", width:"50%"}}>Pending</button>
                <button
                  onClick={() => orderCancel(order?._id)}

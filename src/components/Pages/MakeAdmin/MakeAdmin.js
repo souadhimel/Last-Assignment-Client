@@ -5,7 +5,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 
 const MakeAdmin = () => {
-    const [email, setEmail] = useState("");
+
     const navigate = useNavigate();
     
     const { register, handleSubmit,reset } = useForm();

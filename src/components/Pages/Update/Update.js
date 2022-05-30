@@ -14,13 +14,15 @@ const Update = () => {
     formState: { errors },
   } = useForm();
   useEffect(() => {
-    const url = `https://tranquil-dusk-37882.herokuapp.com/update/order/${id}`;
+    const url = `https://tranquil-dusk-37882.herokuapp.com/order/update/${id}`;
+    console.log(url);
     fetch(url)
       .then((res) => res.json())
       .then((data) => console.log(data));
   }, [id, isUpdate]);
 
   const onSubmit = (data) => {
+    console.log(data);
     fetch(`https://tranquil-dusk-37882.herokuapp.com/update/${id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
@@ -45,7 +47,7 @@ const Update = () => {
   };
   return (
     <div style={{ textAlign: "center" }}>
-      <form style={{ textAlign: "center" }} > 
+      <form onSubmit={handleSubmit(onSubmit)} style={{ textAlign: "center" }} > 
         <input
           className="form-control m-3 w-50 justify-content-center align-items-center"
           defaultValue={order?.status}
