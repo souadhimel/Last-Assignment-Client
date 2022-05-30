@@ -24,9 +24,17 @@ fetch(url)
 
 const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
+    console.log(data);
     data.email=user?.email;
-    if(service?.avQuantity<data.orderQuantity && data.orderQuantity<service?.minQuantity){
-    alert(`Order quantity must be greater than ${service?.minQuantity} and less than ${service?.avQuantity}`)
+    const order=parseInt(data.orderQuantity)
+    const availQuantity=parseInt(service?.avQuantity)
+    const minimumQuantity=parseInt(service?.minQuantity)
+  
+        if((minimumQuantity)>(order) || (order)>(availQuantity))
+    {
+      alert(`Order quantity must be greater than ${service?.minQuantity} and less than ${service?.avQuantity}`);
+      return;
+  
   }
   else{  fetch("https://tranquil-dusk-37882.herokuapp.com/myOrders", {
     method: "POST",
@@ -45,7 +53,8 @@ const { register, handleSubmit, reset } = useForm();
       })
       reset()
       navigate('/dashboard')
-    });}
+    });
+  }
   
   
   };

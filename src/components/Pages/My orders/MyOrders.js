@@ -75,7 +75,8 @@ useEffect(() => {
        <thead>
          <tr>
            <th style={{textAlign: 'center'}}>Product Id</th>
-           <th style={{textAlign: 'center'}}>Name</th>
+           <th style={{textAlign: 'center'}}>Product Name</th>
+           <th style={{textAlign: 'center'}}>Status</th>
            <th style={{textAlign: 'center'}}>Order Quantity</th>
            <th style={{textAlign: 'center'}}>Actions</th>
          </tr>
@@ -84,7 +85,8 @@ useEffect(() => {
          {services?.map((service) => (
            <tr key={service._id}>
              <td style={{textAlign: 'center'}}>{service?._id}</td>
-             <td style={{textAlign: 'center'}}>{service?.name}</td>
+             <td style={{textAlign: 'center'}}>{service?.productName}</td>
+             <td style={{textAlign: 'center'}}>{service?.status}</td>
              <td style={{textAlign: 'center'}}>{service?.orderQuantity}</td>
              <td>
             <div className="d-flex">  

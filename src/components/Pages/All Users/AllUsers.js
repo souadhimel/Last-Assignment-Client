@@ -5,7 +5,7 @@ import { Flip } from 'react-reveal';
 import { useNavigate } from 'react-router-dom';
 import Loading from '../../Shared Pages/Loading/Loading';
 
-const AllUsers = () => {
+const AllUsers = ({user}) => {
     const navigate = useNavigate()
     const admin=()=>{
       navigate('/makeAdmin')
@@ -14,6 +14,7 @@ const AllUsers = () => {
     if (isLoading) {
         return<Loading></Loading>
     }
+    
 
    
     

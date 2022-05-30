@@ -16,7 +16,7 @@ const Dashboard = () => {
         fetch(`https://tranquil-dusk-37882.herokuapp.com/user/${user?.email}`)
         .then(res=>res.json())
         .then((data) => {
-            console.log(data);
+            // console.log(data);
             if (data.role==='admin') {
                 setIsAdmin(true);         
             }
@@ -26,7 +26,7 @@ const Dashboard = () => {
 
         })
     },[user?.email]);
-    console.log(isAdmin);
+    // console.log(isAdmin);
 
     const navigation = useNavigate();
     const logOut = () => {
@@ -103,13 +103,13 @@ const Dashboard = () => {
                 <i className="fas fa-home"></i>{" "}
                 <Link to="/home"> Home</Link>
               </li>
-                  <li style={{fontSize: '15px',marginBottom:"30px"}}>
+                  <li style={{fontSize: '15px',marginBottom:"30px", textColor:"red"}}>
                     <i className="fas fa-align-justify"></i>{" "}
                     <Link to="/dashboard/profile">My Profile</Link>
                   </li>
                   <li style={{fontSize: '15px',marginBottom:"30px"}}>
                     <i className="fas fa-product-hunt"></i>{" "}
-                    <Link to="/dashboard/myOrders">MyOrders</Link>
+                    <Link to="/dashboard/myOrders">My Orders</Link>
                   </li>
                   <li style={{fontSize: '15px',marginBottom:"30px"}}>
                     <i className="fas fa-pen-square"></i>{" "}

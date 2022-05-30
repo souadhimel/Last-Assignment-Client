@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import { Zoom } from 'react-reveal';
-import { Link } from 'react-router-dom';
 import Swal from "sweetalert2";
 
 const ManageAllOrders = () => {
@@ -75,7 +74,7 @@ const ManageAllOrders = () => {
             //  onClick={() =>updateStock(order?._id)}
 
 
-              style={{margin:"15px",padding:"12px", backgroundColor:"green",borderRadius:"5px", color:"white", width:"50%"}}>Update</button>
+              style={{margin:"15px",padding:"12px", backgroundColor:"green",borderRadius:"5px", color:"white", width:"50%"}}>Pending</button>
                <button
                  onClick={() => orderCancel(order?._id)}
                  style={{margin:"15px",padding:"12px", backgroundColor:"red",borderRadius:"5px", color:"white", width:"50%"}} >Delete</button></div>
