@@ -36,7 +36,6 @@ const { register, handleSubmit, reset } = useForm();
     .then((res) => res.json())
     .then((result) => {
       setService(result);
-      // console.log(result);
       Swal.fire({
         position: 'center',
         icon: 'success',
