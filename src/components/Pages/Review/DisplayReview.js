@@ -8,7 +8,7 @@ import { Rotate } from "react-reveal";
 const DisplayReview = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/rating")
+    fetch("https://tranquil-dusk-37882.herokuapp.com/rating")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);

@@ -16,7 +16,7 @@ const Purchase = () => {
   const  [user] = useAuthState(auth);
 
 useEffect(() => {
-const url=`http://localhost:5000/service/${id}`;
+const url=`https://tranquil-dusk-37882.herokuapp.com/service/${id}`;
 fetch(url)
 .then((res) => res.json())
 .then((data) =>setService(data))
@@ -25,7 +25,7 @@ fetch(url)
 const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
     data.email=user?.email;
-    fetch("http://localhost:5000/myOrders", {
+    fetch("https://tranquil-dusk-37882.herokuapp.com/myOrders", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(data),

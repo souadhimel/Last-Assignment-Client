@@ -7,13 +7,13 @@ import { Zoom } from 'react-reveal';
 const ManageProducts = () => {
     const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/service")
+    fetch("https://tranquil-dusk-37882.herokuapp.com/service")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
 
   const handleDelete = (id) => {
-    const url = `http://localhost:5000/service/${id}`;
+    const url = `https://tranquil-dusk-37882.herokuapp.com/service/${id}`;
     fetch(url, {
       method: "DELETE",
     })

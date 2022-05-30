@@ -10,7 +10,7 @@ const AddReviews = () => {
     const  [user] = useAuthState(auth);
   const onSubmit = (data) => {
     console.log(data);
-    const url=`http://localhost:5000/rating`;
+    const url=`https://tranquil-dusk-37882.herokuapp.com/rating`;
 
     fetch(url,{
         method: 'POST',

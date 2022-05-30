@@ -12,7 +12,7 @@ const Review = () => {
   const onSubmit = (data) => {
     console.log(data);
     axios
-      .post("http://localhost:5000/rating", data)
+      .post("https://tranquil-dusk-37882.herokuapp.com/rating", data)
       .then((res) => {
         if (res.data.insertedId) {
           Swal.fire({

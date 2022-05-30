@@ -22,7 +22,7 @@ const updateStock=()=>{
     
 
 useEffect(() => {
-        fetch(`http://localhost:5000/myOrders/${user?.email}`)
+        fetch(`https://tranquil-dusk-37882.herokuapp.com/myOrders/${user?.email}`)
         .then(res=>res.json())
         .then(data=>setServices(data))
     },[user?.email])
@@ -30,7 +30,7 @@ useEffect(() => {
     const orderCancel=id=>{
         const proceed=window.confirm('Are you sure you want to delete?')
        if (proceed) {
-         const url=`http://localhost:5000/myOrders/${id}`;
+         const url=`https://tranquil-dusk-37882.herokuapp.com/myOrders/${id}`;
         fetch(url,{
             method: 'DELETE'
         }) 

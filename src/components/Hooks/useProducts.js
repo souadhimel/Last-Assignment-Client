@@ -4,7 +4,7 @@
 // const useProducts = () => {
 //   const [products, setProducts] = useState([]);
 //   useEffect(() => {
-//     fetch("http://localhost:5000/service")
+//     fetch("https://tranquil-dusk-37882.herokuapp.com/service")
 //       .then((res) => res.json())
 //       .then((data) => {
 //         setProducts(data);
