@@ -10,8 +10,6 @@ const AllUsers = () => {
     
     return (
         <div>
-           
-            <h2>All users</h2>
               <h2>All Users:{users.length}</h2>
 
 
