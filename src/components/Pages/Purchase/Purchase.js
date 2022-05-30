@@ -25,29 +25,29 @@ fetch(url)
 const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
     data.email=user?.email;
-    if(service?.avQuantity<data.orderQuantity<service?.minQuantity){
+    if(service?.avQuantity<data.orderQuantity && data.orderQuantity<service?.minQuantity){
     alert(`Order quantity must be greater than ${service?.minQuantity} and less than ${service?.avQuantity}`)
   }
-    fetch("https://tranquil-dusk-37882.herokuapp.com/myOrders", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        setService(result);
-        // console.log(result);
-        Swal.fire({
-          position: 'center',
-          icon: 'success',
-          title: 'Your order has been successfully submitted!',
-          showConfirmButton: false,
-          timer: 1500
-        })
-        reset()
-        navigate('/dashboard')
-      });
-  console.log(data);
+  else{  fetch("https://tranquil-dusk-37882.herokuapp.com/myOrders", {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify(data),
+  })
+    .then((res) => res.json())
+    .then((result) => {
+      setService(result);
+      // console.log(result);
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Your order has been successfully submitted!',
+        showConfirmButton: false,
+        timer: 1500
+      })
+      reset()
+      navigate('/dashboard')
+    });}
+  
   
   };
 
