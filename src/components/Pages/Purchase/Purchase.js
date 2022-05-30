@@ -24,6 +24,11 @@ fetch(url)
 
 const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
+    if(service?.avQuantity<data.orderQuantity<service?.minQuantity){
+
+      alert(`Order quantity must be greater than ${service?.minQuantity} and less than ${service?.avQuantity}`)
+      return;
+    }
     data.email=user?.email;
     fetch("https://tranquil-dusk-37882.herokuapp.com/myOrders", {
       method: "POST",
@@ -66,6 +71,7 @@ const { register, handleSubmit, reset } = useForm();
             <Col className="my-4" sm={12} md={6}>
             <Rotate bottom>  <h2 className="text-center feature">Please confirm your order</h2></Rotate>
               <div className="mt-5">
+                <h2>Name: {service?.name}</h2>
                 <h4>{service?.description}</h4>
                 <h3 className="mt-3">Price: {service?.price} TK</h3>
                 <h3>Available Quantity:{service?.avQuantity}</h3>
@@ -100,30 +106,31 @@ const { register, handleSubmit, reset } = useForm();
                     </Col>
                   </Row>
                   <Row className="mt-3">
+                
                     <Col sm={12} md={6}>
                       <label htmlFor="quantity">
-                        <b>Available Quantity</b>
+                        <b>Order Quantity</b>
                       </label>
                       <input
-                        id="avQuantity"
-                        required
-                        type="number"
-                        className="form-control"
-                        {...register("avQuantity")}
-                        defaultValue={service?.avQuantity}
-                      />
-                    </Col>
-                    <Col sm={12} md={6}>
-                      <label htmlFor="quantity">
-                        <b>Minimum Quantity</b>
-                      </label>
-                      <input
-                        id="minQuantity"
+                        id="orderQuantity"
                         required
                         type="number"
                         defaultValue={service?.minQuantity}
                         className="form-control"
-                        {...register("minQuantity")}
+                        {...register("orderQuantity")}
+                      />
+                    </Col>
+                    <Col sm={12} md={6}>
+                      <label htmlFor="item name">
+                        <b>Product name</b>
+                      </label>
+                      <input
+                        id="productName"
+                        required
+                        type="text"
+                        defaultValue={service?.name}
+                        className="form-control"
+                        {...register("productName")}
                       />
                     </Col>
                   </Row>
