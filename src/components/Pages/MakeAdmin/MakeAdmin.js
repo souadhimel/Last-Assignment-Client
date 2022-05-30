@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 const MakeAdmin = () => {
     const [email, setEmail] = useState("");
+    const navigate = useNavigate();
     
     const { register, handleSubmit,reset } = useForm();
 
@@ -14,8 +18,10 @@ method: 'PUT',
 headers: {'content-type': 'application/json'},
 // body: JSON.stringify(data),
 }).then(res=>res.json())
-.then(data=>setEmail(data));
-console.log(data);
+.then(data=>console.log(data));
+toast.success('Successfully made an admin')
+reset()
+navigate('/dashboard')
     }
     return (
         <div className="add-service m-5">
@@ -30,6 +36,7 @@ console.log(data);
           />
             <input className="add_button" type="submit" />
         </form>
+        <ToastContainer/>
       </div>
     );
 };

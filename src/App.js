@@ -52,7 +52,7 @@ function App() {
 <Route path="/payment" element={<Payment></Payment>}></Route>
 <Route path="/manageProducts" element={<ManageProducts></ManageProducts>}></Route>
 <Route path="/manageOrders" element={<ManageAllOrders></ManageAllOrders>}></Route>
-<Route path="/users" element={<AllUsers></AllUsers>}></Route>
+<Route path="/makeAdmin" element={<MakeAdmin></MakeAdmin>}></Route>
 
 
 <Route path="/dashboard" element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
@@ -64,7 +64,8 @@ function App() {
 <Route path="manageOrders" element={<ManageAllOrders></ManageAllOrders>}></Route>
 <Route path="manageProducts" element={<ManageProducts></ManageProducts>}></Route>
 <Route path="addProducts" element={<AddProducts></AddProducts>}></Route>
-<Route path="makeAdmin" element={<MakeAdmin></MakeAdmin>}></Route>
+<Route path="users" element={<AllUsers></AllUsers>}></Route>
+
 
 </Route>
 <Route path="*" element={<NotFound></NotFound>}></Route>

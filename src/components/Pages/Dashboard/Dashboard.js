@@ -98,23 +98,24 @@ const Dashboard = () => {
             
               {!isAdmin &&
                 <div>
-                      <li>
+                  <h2 style={{fontSize: '25px',marginBottom:"30px"}}>User: {user?.displayName}'s Dashboard</h2>
+                      <li style={{fontSize: '15px',marginBottom:"30px"}}>
                 <i className="fas fa-home"></i>{" "}
                 <Link to="/home"> Home</Link>
               </li>
-                  <li>
+                  <li style={{fontSize: '15px',marginBottom:"30px"}}>
                     <i className="fas fa-align-justify"></i>{" "}
                     <Link to="/dashboard/profile">My Profile</Link>
                   </li>
-                  <li>
-                    <i className="fas fa-align-justify"></i>{" "}
+                  <li style={{fontSize: '15px',marginBottom:"30px"}}>
+                    <i className="fas fa-product-hunt"></i>{" "}
                     <Link to="/dashboard/myOrders">MyOrders</Link>
                   </li>
-                  <li>
+                  <li style={{fontSize: '15px',marginBottom:"30px"}}>
                     <i className="fas fa-pen-square"></i>{" "}
                     <Link to="/dashboard/addReviews">Add a Review</Link>
                   </li>
-                  <li>
+                  <li style={{fontSize: '15px',marginBottom:"30px"}}>
                     <i className="far fa-credit-card"></i>
                     <Link to="/dashboard/payment">Payment</Link>
                   </li>
@@ -122,28 +123,28 @@ const Dashboard = () => {
               }
               { isAdmin && (
                 <div>
-                    <h2>Admin Dashboard</h2>
-                    <li>
+                    <h2 style={{fontSize: '25px',marginBottom:"30px"}}>Admin: {user?.displayName}'s Dashboard</h2>
+                    <li style={{fontSize: '15px',marginBottom:"30px"}}>
                 <i className="fas fa-home"></i>{" "}
                 <Link to="/home"> Home</Link>
               </li>
-              <li>
+              <li style={{fontSize: '15px',marginBottom:"30px"}}>
                     <i className="fas fa-align-justify"></i>{" "}
                     <Link to="/dashboard/profile">My Profile</Link>
                   </li>
-                  <li>
-                    <i className="fas fa-align-justify"></i>{" "}
+                  <li style={{fontSize: '15px',marginBottom:"30px"}}>
+                    <i className="fas fa-product-hunt"></i>{" "}
                     <Link to="/dashboard/manageOrders">ManageAllOrders</Link>
                   </li>
-                  <li>
+                  <li style={{fontSize: '15px',marginBottom:"30px"}}>
                     <i className="fas fa-plus-circle"></i>{" "}
                     <Link to="/dashboard/addProducts">Add A Product</Link>
                   </li>
-                  <li>
+                  <li style={{fontSize: '15px',marginBottom:"30px"}}>
                     <i className="fas fa-user-shield"></i>{" "}
-                    <Link to="/dashboard/makeAdmin">Make admin</Link>
+                    <Link to="/dashboard/users">All users</Link>
                   </li>
-                  <li>
+                  <li style={{fontSize: '15px',marginBottom:"30px"}}>
                     <i className="fas fa-luggage-cart"></i>{" "}
                     <Link to="/dashboard/manageProducts">ManageProducts</Link>
                   </li>

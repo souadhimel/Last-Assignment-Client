@@ -24,12 +24,10 @@ fetch(url)
 
 const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
-    if(service?.avQuantity<data.orderQuantity<service?.minQuantity){
-
-      alert(`Order quantity must be greater than ${service?.minQuantity} and less than ${service?.avQuantity}`)
-      return;
-    }
     data.email=user?.email;
+    if(service?.avQuantity<data.orderQuantity<service?.minQuantity){
+    alert(`Order quantity must be greater than ${service?.minQuantity} and less than ${service?.avQuantity}`)
+  }
     fetch("https://tranquil-dusk-37882.herokuapp.com/myOrders", {
       method: "POST",
       headers: { "content-type": "application/json" },
